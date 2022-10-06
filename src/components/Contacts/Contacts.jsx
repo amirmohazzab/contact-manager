@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import {PINK, CURRENTLINE, ORANGE} from "../../helpers/colors";
 import Contact from './Contact'
 import Spinner from "../Spinner";
+import { ContactContext } from '../../context/contactContext';
 
-const Contacts = ({contacts, loading, confirmDelete}) => {
+const Contacts = () => {
+
+    const {loading, filteredContacts, deleteContact} = useContext(ContactContext);
   return (
     <> 
     <section className='container'> 
@@ -27,10 +30,11 @@ const Contacts = ({contacts, loading, confirmDelete}) => {
             <section className='container'>
                 <div className='row'> 
                 {
-                    contacts.length > 0 ? contacts.map(c => ( <Contact key={c.id} 
-                        confirmDelete={() => confirmDelete(c.id, c.fullname)}
-                        
-                        contact={c}/>)) :
+                    filteredContacts.length > 0 ? filteredContacts.map(c => ( <Contact 
+                        key={c.id} 
+                        deleteContact={() => deleteContact(c.id, c.fullname)}
+                        contact={c}
+                        />)) :
                     (
                         <div className='text-center py-5' style={{backgroundColor: CURRENTLINE}}>
                             <p className='h3' style={{color: ORANGE}}>

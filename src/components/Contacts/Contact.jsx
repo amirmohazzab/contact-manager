@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {CURRENTLINE, ORANGE, RED, CYAN, PURPLE} from "../../helpers/colors"
 
-const Contact = ({contact, confirmDelete}) => {
+const Contact = ({contact, deleteContact}) => {
 
   return (
     <div className="col-md-6">
@@ -40,7 +40,7 @@ const Contact = ({contact, confirmDelete}) => {
               <Link to={`/contacts/edit/${contact.id}`} className="btn my-1" style={{ backgroundColor: CYAN }}>
                 <i className="fa fa-pencil" />
               </Link>
-              <button onClick={confirmDelete} className="btn my-1" style={{ backgroundColor: RED }}>
+              <button onClick={deleteContact} className="btn my-1" style={{ backgroundColor: RED }}>
                 <i className="fa fa-trash" />
               </button>
             </div>
