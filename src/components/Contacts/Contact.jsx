@@ -33,7 +33,7 @@ const Contact = ({contact, deleteContact}) => {
                 </li>
               </ul>
             </div>
-            <div className="col-md-1 col-sm-1 d-flex flex-column align-items-center">
+            <div className="col-md-1 col-sm-1 d-flex flex-column align-items-center justify-content-center view-edit-delete">
               <Link to={`/contacts/${contact.id}`} className="btn my-1" style={{ backgroundColor: ORANGE }}>
                 <i className="fa fa-eye" />
               </Link>

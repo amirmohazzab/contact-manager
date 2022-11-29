@@ -14,7 +14,7 @@ const Navbar = () => {
     >
       <div className="container">
         <div className="row w-100">
-          <div className="col">
+          <div className="col-md-6 col-sm-12">
             <div className="navbar-brand float-start">
               <i className="fa fa-id-badge" style={{ color: PURPLE }} />
               <span style={{ color: PURPLE }}> Contacts </span>
@@ -25,7 +25,7 @@ const Navbar = () => {
             </div>
           </div>
           {location.pathname === "/contacts" ? (
-            <div className="col">
+            <div className="col-md-6 col-sm-12">
               <SearchContact />
             </div>
           ) : null}

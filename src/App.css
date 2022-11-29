@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+@media screen and (max-width : 768px){
+  .contact-search{
+    display: block;
+  }
+}
+
+@media screen and (max-width : 576px){
+  .view-edit-delete{
+    flex-direction: row;
+  }
+}

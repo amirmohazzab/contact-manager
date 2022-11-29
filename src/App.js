@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import "./App.css";
+import {ToastContainer, toast} from 'react-toastify';
 import {
   COMMENT,
   CURRENTLINE,
@@ -55,19 +56,18 @@ const App = () => {
     fetchData();
   }, []);
 
-  const createContactForm = async (event) => {
-    event.preventDefault();
+  const createContactForm = async (values) => {
     try {
       setLoading(true);
-      const { status, data } = await createContact(contact);
+      const { status, data } = await createContact(values);
 
       if (status === 201) {
+        toast.success("contact was successfully created")
 
         const allContacts = [...contacts, data];
         setContacts(allContacts);
         setFilteredContacts(allContacts);
 
-        setContact({});
         setLoading((prevLoading) => !prevLoading);
         navigate("/contacts");
       }
@@ -137,6 +137,7 @@ const App = () => {
 
       const {status} = await deleteContact(contactId);
 
+      toast.error("contact was successfully deleted")
       if (status !== 200) {
 
         setContacts(allContacts);
@@ -180,6 +181,7 @@ const App = () => {
       }}
     >
       <div className="App">
+        <ToastContainer position="top-right" theme="colored" />
         <Navbar />
         <Routes>
           <Route path="/" element={<Navigate to="/contacts" />} />
