@@ -19,6 +19,7 @@ const AddContact = () => {
         <>
           <section className="p-3">
             <img
+              className="img-fluid "
               src={require("../../assets/man-taking-note.png")}
               height="400px"
               style={{
@@ -42,7 +43,7 @@ const AddContact = () => {
               </div>
               <hr style={{ backgroundColor: GREEN }} />
               <div className="row mt-5">
-                <div className="col-md-4">
+                <div className="col-xl-4 col-lg-6 col-md-8 col-sm-12">
                   <Formik 
                   initialValues = {{
                     fullname: "",

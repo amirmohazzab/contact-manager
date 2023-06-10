@@ -1,4 +1,5 @@
 import axios from 'axios';
+//const SERVICE_URL = "https://contactsapi.ahmohazzab.com";
 const SERVICE_URL = "http://localhost:9000";
 
 export const getAllContacts = () => {

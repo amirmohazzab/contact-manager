@@ -37,15 +37,11 @@
   }
 }
 
-
-@media screen and (max-width : 768px){
-  .contact-search{
-    display: block;
-  }
-}
-
 @media screen and (max-width : 576px){
-  .view-edit-delete{
-    flex-direction: row;
+  .view4{
+    width: 60%;
   }
-}
+  .view1{
+    width: 40%;
+   }
+ }

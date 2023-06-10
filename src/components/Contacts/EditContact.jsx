@@ -153,7 +153,7 @@ const EditContact = () => {
                           </Field>
                           <ErrorMessage name="group" render={msg => <div className="text-danger">{msg}</div>} />
                         </div>
-                        <div className="mx-2">
+                        <div className="m-2">
                           <input
                             type="submit"
                             className="btn"
